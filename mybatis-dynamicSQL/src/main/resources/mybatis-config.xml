@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE configuration
+                PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部配置文件 -->
+    <properties resource="application.properties"/>
+    <settings>
+        <!-- 全局性地开启或关闭所有映射器配置文件中已配置的任何缓存。 -->
+        <setting name="cacheEnabled" value="true"/>
+        <!-- 延迟加载的全局开关。当开启时，所有关联对象都会延迟加载。
+        特定关联关系中可通过设置 fetchType 属性来覆盖该项的开关状态。 -->
+        <setting name="lazyLoadingEnabled" value="false"/>
+        <!-- 指定 MyBatis 应如何自动映射列到字段或属性。
+        NONE 表示关闭自动映射；PARTIAL 只会自动映射没有定义嵌套结果映射的字段。
+        FULL 会自动映射任何复杂的结果集（无论是否嵌套）。 -->
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <!-- 指定 MyBatis 的日志工厂，未指定时将自动查找。重点使用slf4j log4j stdout_logging -->
+        <setting name="logImpl" value="LOG4J"/>
+
+    </settings>
+    <typeAliases>
+        <!-- 方式一，单行配置，在mapper中可以仅使用alias别名，不用再使用全路径包名 -->
+        <!-- <typeAlias type="com.po.com.iris.Users" alias="User"/> -->
+        <!-- 配置包路径，会自动扫描包名作为别名，默认包名首字母小写 users -->
+        <!-- 在pojo中对类使用@Alias可以 -->
+        <package name="com.iris.po"/>
+    </typeAliases>
+    <environments default="properties">
+        <environment id="properties">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+        <environment id="dev">
+        <!-- type="[JDBC|MANAGED]" -->
+        <transactionManager type="JDBC"/>
+        <!-- type="[UNPOOLED|POOLED|JNDI]" -->
+        <!-- UNPOOLED– 这个数据源的实现会每次请求时打开和关闭连接。
+        虽然有点慢，但对那些数据库连接可用性要求不高的简单应用程序来说，是一个很好的选择。
+        性能表现则依赖于使用的数据库，对某些数据库来说，使用连接池并不重要，这个配置就很适合这种情形。 -->
+        <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://localhost:3306/mybatis
+                ?useSSL=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;
+                allowMultiQueries=true&amp;useAffectedRows=true&amp;
+                serverTimezone=Asia/Shanghai"/>
+            <property name="username" value="root"/>
+            <property name="password" value="112358"/>
+        </dataSource>
+    </environment>
+    </environments>
+    <mappers>
+        <!--每一个mapper都需要注册-->
+        <mapper resource="mapper/BlogMapper.xml"/>
+    </mappers>
+</configuration>
