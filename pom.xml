@@ -30,11 +30,11 @@
         <artifactId>mybatis</artifactId>
         <version>3.5.10</version>
     </dependency>
-    <!--mysql 8.0.29 2022-07-31-->
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.29</version>
+        <version>8.0.33</version>
     </dependency>
     <!--junit 8.0.29 2022-07-31-->
     <dependency>
@@ -48,11 +48,11 @@
         <artifactId>lombok</artifactId>
         <version>1.18.24</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+    <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
     <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>1.2.17</version>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-core</artifactId>
+        <version>2.20.0</version>
     </dependency>
 </dependencies>
 </project>
