@@ -18,7 +18,7 @@
     </settings>
     <typeAliases>
         <!-- 方式一，单行配置，在mapper中可以仅使用alias别名，不用再使用全路径包名 -->
-        <!-- <typeAlias type="com.po.com.iris.Users" alias="User"/> -->
+        <!-- <typeAlias type="com.iris.po.Users" alias="User"/> -->
         <!-- 配置包路径，会自动扫描包名作为别名，默认包名首字母小写 users -->
         <!-- 在pojo中对类使用@Alias可以 -->
         <package name="com.iris.po"/>

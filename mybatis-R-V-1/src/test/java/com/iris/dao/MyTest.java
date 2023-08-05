@@ -4,13 +4,15 @@ import com.iris.po.Student;
 import com.iris.po.Teacher;
 import com.iris.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 import java.util.List;
 
 public class MyTest {
-    static Logger log = Logger.getLogger(MyTest.class);
+    static Logger log = LogManager.getFormatterLogger(MyTest.class);
+
     @Test
     public void Test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();

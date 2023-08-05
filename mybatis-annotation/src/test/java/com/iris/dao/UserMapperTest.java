@@ -3,11 +3,13 @@ package com.iris.dao;
 import com.iris.po.Users;
 import com.iris.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 
 public class UserMapperTest {
-    static Logger log = Logger.getLogger(UserMapperTest.class);
+    static Logger log = LogManager.getFormatterLogger(UserMapperTest.class);
+
     @Test
     public void test() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
