@@ -30,11 +30,13 @@
         <artifactId>mybatis</artifactId>
         <version>3.5.10</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.33</version>
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+    <groupId>com.mysql</groupId>
+    <artifactId>mysql-connector-j</artifactId>
+    <version>9.2.0</version>
+</dependency>
+
     </dependency>
     <!--junit 8.0.29 2022-07-31-->
     <dependency>
